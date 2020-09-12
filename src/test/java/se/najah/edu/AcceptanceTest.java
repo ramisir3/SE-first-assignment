@@ -7,15 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.*;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="uses_cases",
-plugin = { "html:target/cucumber/wikipedia.html"},
-monochrome = true,
-snippets = SnippetType.CAMELCASE,
-glue = {"se.najah.edu"},
-strict = true)
+@CucumberOptions(features = "uses_cases", plugin = {
+		"html:target/cucumber/wikipedia.html" }, monochrome = true, snippets = SnippetType.CAMELCASE, glue = {
+				"se.najah.edu" }, strict = true)
 
-		
-		
 public class AcceptanceTest {
 
 }
