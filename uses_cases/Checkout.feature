@@ -1,4 +1,3 @@
-@tag 
 Feature: Checkout 
 
 Scenario: Checkout a banana 
