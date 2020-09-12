@@ -1,9 +1,13 @@
 package se.najah.edu;
 
-public class Checkout {
-	private int total;
+import java.util.ArrayList;
 
-	public void check(int count, int price) {
+public class Checkout {
+	private int total=0;
+	//public static ArrayList<fruit> fruits=new ArrayList<fruit>();
+	
+	public void check(int count, int price ) {
+		
 		total += (count*price);
 	}
 	
