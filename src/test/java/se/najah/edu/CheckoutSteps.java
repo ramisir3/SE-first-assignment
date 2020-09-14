@@ -17,12 +17,12 @@ public class CheckoutSteps {
 	public static ArrayList<product> products=new ArrayList<product>();
 
 	@Given("the price of a {string} is {int}")
-	public void thePriceOfAIs(String string, Integer int1) {
+	public void thePriceOfAIs(String item, Integer price) {
 		// Write code here that turns the phrase above into concrete actions
 			product A;
 			A = new product();//make new obj;
-			A.setitem(string);
-			A.setprice(int1);
+			A.setitem(item);
+			A.setprice(price);
 			A.setcount(0);
 			products.add(A);
 		
@@ -31,11 +31,11 @@ public class CheckoutSteps {
 	}
 
 	@When("I checkout {int} {string}")
-	public void iCheckout(Integer int1, String string) {
+	public void iCheckout(Integer Count, String item) {
 		// Write code here that turns the phrase above into concrete actions
-		count = int1;
+		count = Count;
 		for(int i=0;i<products.size();i++) {
-			if(string.equalsIgnoreCase(products.get(i).getitem())) {
+			if(item.equalsIgnoreCase(products.get(i).getitem())) {
 				products.get(i).setcount((products.get(i).getcount())+count);
 				
 			}
@@ -45,12 +45,12 @@ public class CheckoutSteps {
 	}
 
 	@Then("the total price should be {int}")
-	public void theTotalPriceShouldBe(Integer int1) {
+	public void theTotalPriceShouldBe(Integer total) {
 		// Write code here that turns the phrase above into concrete actions
 		for(int i=0;i<products.size();i++) {
 		co.check(products.get(i).getcount(), products.get(i).getprice());
 		}
-		assertTrue(int1 == co.getTotal());
+		assertTrue(total == co.getTotal());
 		products.removeAll(products);
 	}
 
