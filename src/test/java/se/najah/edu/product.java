@@ -1,6 +1,6 @@
 package se.najah.edu;
 
-public class fruit {
+public class product {
 	private String item;
 	private int price;
 	private int count;
